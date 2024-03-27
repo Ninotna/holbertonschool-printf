@@ -1,0 +1,76 @@
+.TH _printf 3 "March 28 2024" "Programmer's Manual"
+version 1.0 release date: 28/03/24
+
+.SH NAME
+.B _printf
+- Prints formatted output to stdout.
+
+.SH SYNOPSIS
+.RB #include <printf.h>
+.RB int _printf(const char *restrict format, ...);
+
+.SH DESCRIPTION
+The
+.B _printf()
+function produces output according to a format. It writes output to the standard output (stdout) stream and returns the number of characters printed. The function writes the output under the control of a format string that specifies how subsequent arguments (or arguments accessed via the variable-length argument facilities) are converted for output.
+
+.B Format of the format string:
+The format string is a character string composed of zero or more directives: ordinary characters (not %), which are copied unchanged to the output stream; and conversion specifications, each of which results in fetching zero or more subsequent arguments. Each conversion specification is introduced by the character %, and ends with a conversion specifier.
+
+The overall syntax of a conversion specification is:
+
+%[$][flags][width][.precision][length modifier]conversion
+
+The arguments must correspond properly (after type promotion) with the conversion specifier.
+
+.B Examples:
+_printf("%d", 1);
+
+.SH CONVERSION SPECIFIERS
+.B %c - prints a single char
+.B %s - prints the argument as a string
+.B %% - prints a single percentage sign to the stream
+.B %i / %d - prints a signed decimal integer
+
+.SH RETURN VALUE
+Upon successful return, the function returns the number of characters printed (excluding the null byte used to end output to strings).
+
+.B Return value:
+On success, _printf returns the number of printed characters. If
+.I format
+is NULL or error, it returns -1.
+
+.SH EXAMPLES
+.PP
+#include "main.h"
+.PP
+_printf("character: %c", 'R');
+.PP
+Output: character: R
+.PP
+_printf("string: %s", "Hi Betty !");
+.PP
+Output: string: Hi Betty !
+.PP
+_printf("integer: %i", 87);
+.PP
+Output: integer: 87
+.PP
+_printf("decimal: %d", 1987);
+.PP
+Output: decimal: 1987
+.PP
+_printf("octal %o", 92);
+.PP
+_printf("Percent:[%%]");
+.PP
+Output: Percent:[%]
+
+.SH BUGS
+No known bugs.
+
+.SH AUTHORS
+Ines, Antonin
+
+.SH COPYRIGHT
+© 2024 Ines, Antonin. All rights reserved.

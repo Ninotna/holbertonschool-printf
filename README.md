@@ -1,6 +1,6 @@
 # myprintf - custom Printf program by Inès & Antonin
 
-```version 1.0```  `[release date:]: # Date: 2024-03-24`
+```version 1.0```  `[release date:]: # Date: 2024-03-28`
 
 ```bash
                       ███              █████       ██████
