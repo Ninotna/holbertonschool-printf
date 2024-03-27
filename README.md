@@ -32,10 +32,11 @@
   - **Feedback:** The return value of `printf()`, which indicates the number of characters printed, is crucial for debugging and validating output processes.
   - **Applications:** Incorporating `printf()` in your programming endeavors allows for nuanced data representation, ensuring clear communication and interaction with the end-user.
 
-**Code Example:**
+- **Code Example:**
 
 ```c
 printf("Hello, World! %d", 2023);
+```
 
 ## 2. Features
 
