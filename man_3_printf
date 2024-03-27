@@ -1,3 +1,4 @@
+.tr \[u8]
 .TH _printf 3 "March 28 2024" "Programmer's Manual"
 version 1.0 release date: 28/03/24
 
@@ -7,7 +8,8 @@ version 1.0 release date: 28/03/24
 
 .SH SYNOPSIS
 .RB #include <printf.h>
-.RB int _printf(const char *restrict format, ...);
+.LP
+.RB int \_printf(const char *restrict format, ...);
 
 .SH DESCRIPTION
 The
@@ -28,17 +30,22 @@ _printf("%d", 1);
 
 .SH CONVERSION SPECIFIERS
 .B %c - prints a single char
+.LP 
 .B %s - prints the argument as a string
+.LP
 .B %% - prints a single percentage sign to the stream
+.LP
 .B %i / %d - prints a signed decimal integer
 
 .SH RETURN VALUE
 Upon successful return, the function returns the number of characters printed (excluding the null byte used to end output to strings).
 
 .B Return value:
-On success, _printf returns the number of printed characters. If
-.I format
-is NULL or error, it returns -1.
+.LP
+On success, _printf returns the number of printed characters. 
+.LP
+If
+.I format is NULL or error, it returns -1.
 
 .SH EXAMPLES
 .PP
@@ -69,8 +76,8 @@ Output: Percent:[%]
 .SH BUGS
 No known bugs.
 
-.SH AUTHORS
-Ines, Antonin
+.SH AUTHORS 
+Inès, Antonin
 
 .SH COPYRIGHT
-© 2024 Ines, Antonin. All rights reserved.
+(C) 2024. All rights reserved.
