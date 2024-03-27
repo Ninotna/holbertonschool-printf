@@ -1,6 +1,6 @@
 # myprintf - custom Printf program by Inès & Antonin
 
-```version 1.1.0```  `[release date:]: # Date: 2024-03-24`
+```version 1.0```  `[release date:]: # Date: 2024-03-24`
 
 ```bash
                       ███              █████       ██████
@@ -55,8 +55,7 @@ printf("Hello, World! %d", 2023);
 | `main.h`  | includes prototypes and structres |
 | `myprintf.c` | _printf: main custom printf function |
 | `print_func.c` | custom printing functions |
-| `get_print_func.c` | call the right function at the right time 
- and deal with cases (escapes, specifiers) while browsing the pointer *format  |
+| `get_print_func.c` | call the right function at the right time and deal with cases (escapes, specifiers) while browsing the pointer *format  |
 | `_putchar.c` | emulates the putchar function |
 | `man_3_printf` | man page |
 
