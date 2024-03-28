@@ -10,20 +10,24 @@
 #include <string.h>
 
 /**
- * struct format_specifier - Structure to map format specifiers
- * to corresponding print functions
- * @specifier: Pointer to a character array representing the format specifier
- * @print_func: Pointer to the corresponding print function
- */
+* struct format_specifier - Structure to map format specifiers
+* to corresponding print functions
+* @specifier: Pointer to a character array representing the format specifier
+* @print_func: Pointer to the corresponding print function
+*/
 typedef struct format_specifier
 {
-    char *specifier;
-    int (*print_func)(va_list arg);
+	char *specifier;
+
+	int (*print_func)(va_list arg);
 } form_spec_t;
 
 int _printf(const char *format, ...);
+
 int specifier(int *i, const char *format, va_list list);
+
 int _putchar(char c);
+
 int _strlen(char *s);
 
 /* all calls from specifier */

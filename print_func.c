@@ -13,7 +13,7 @@ int print_percent(void)
 
 /**
 * print_char - function that prints a char when c specifier is encountered
-*
+* @character: ff
 * Return: character
 */
 int print_char(int character)
@@ -47,7 +47,9 @@ int print_string(va_list args)
 }
 
 /**
-* print_integer - function that prints an integer when i or d specifiers are encountered
+* print_int_dec - function
+* that prints an integer when i or d specifiers are encountered
+* @n: int
 */
 void print_int_dec(int n)
 {
@@ -66,13 +68,13 @@ void print_int_dec(int n)
 		n /= 10;
 	}
 
-	// Ajout du signe négatif si nécessaire
+	/* Ajout du signe négatif si nécessaire */
 	if (negative)
 	{
 		buffer[index++] = '-';
 	}
 
-	// Affichage des chiffres dans l'ordre inverse
+	/* affichage des chiffres dans l'ordre inverse */
 	while (index--)
 	{
 		_putchar(buffer[index]);
