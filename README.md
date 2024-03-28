@@ -35,7 +35,7 @@
 - **Code Example:**
 
 ```c
-printf("Hello, World! %d", 2023);
+printf("Hello, World! %d", 2024);
 ```
 
 ## 2. Features
@@ -61,7 +61,10 @@ printf("Hello, World! %d", 2023);
 
 ## 4. Install
 
-Images of the Stack
+<a href="https://www.vim.org/"><img src="[https://example.com/vim_logo.svg](https://github.com/Ninotna/holbertonschool-printf/blob/0a1154547c19da590db2dc15d6e19932fe5045b5/Vimlogo.svg)" alt="Vim Logo" width="100"></a>
+<a href="https://www.ubuntu.com/"><img src="[https://example.com/ubuntu_logo.svg](https://github.com/Ninotna/holbertonschool-printf/blob/0a1154547c19da590db2dc15d6e19932fe5045b5/ubuntu-icon.svg)" alt="Ubuntu Logo" width="100"></a>
+<a href="https://en.wikipedia.org/wiki/C_(programming_language)"><img src="[https://example.com/c_logo.svg](https://github.com/Ninotna/holbertonschool-printf/blob/0a1154547c19da590db2dc15d6e19932fe5045b5/language_c-programming.svg)" alt="C Logo" width="100"></a>
+
 
 * Language: C
 * OS: Ubuntu 22.04 LTS
