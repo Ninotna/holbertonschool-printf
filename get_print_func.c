@@ -19,13 +19,13 @@ int (*get_print_func(const char *format))(va_list)
 		{"%", print_percent},
 		{"c", print_char},
 		{"s", print_string},
-		{"d", print_integer},
-		{"i", print_integer},
+		{"d", print_int_dec},
+		{"i", print_int_dec},
 		{NULL, NULL},
 		};
 
 
-	for (index = 0; form_spec[index].specifier; index++)
+	for (index = 0; format_specifier[index].specifier; index++)
 	{
 		if (*format == format_specifier[index].specifier[0])
 			return (format_specifier[index].print_func);

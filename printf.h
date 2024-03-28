@@ -33,5 +33,7 @@ int _strlen(char *s);
 /* all calls from specifier */
 int print_string(va_list p);
 int print_int_dec(va_list p);
+int print_percent(va_list p);
+int print_char(va_list p);
 
 #endif

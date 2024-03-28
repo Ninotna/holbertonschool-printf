@@ -2,10 +2,10 @@
 
 /**
 * print_percent - function that prints a percent symbol
-*
+* @p: pointer
 * Return: percent
 */
-int print_percent(void)
+int print_percent(va_list __attribute__((unused)) p)
 {
 	_putchar('%');
 	return (1);
@@ -13,12 +13,15 @@ int print_percent(void)
 
 /**
 * print_char - function that prints a char when c specifier is encountered
-* @character: ff
+* @p: ff
 * Return: character
 */
-int print_char(int character)
+int print_char(va_list p)
 {
-	_putchar((char)character);
+
+	int ch = (char)va_arg(p, int);
+
+	_putchar(ch);
 	return (1);
 }
 
@@ -49,36 +52,34 @@ int print_string(va_list args)
 /**
 * print_int_dec - function
 * that prints an integer when i or d specifiers are encountered
-* @n: int
+* @p: int
 * Return: 0;
 */
-int print_int_dec(int n)
+int print_int_dec(va_list p)
 {
-	char buffer[12];
-	int index = 0;
-	int negative = n < 0;
+	int i = 0;
+	int n = va_arg(p, int);
 
-	if (negative)
+	for (; i < n; i++)
 	{
-		n = -n;
-	}
 
-	while (n > 0)
-	{
-		buffer[index++] = n % 10 + '0';
-		n /= 10;
-	}
 
-	/* Ajout du signe négatif si nécessaire */
-	if (negative)
-	{
-		buffer[index++] = '-';
-	}
-
-	/* affichage des chiffres dans l'ordre inverse */
-	while (index--)
-	{
-		_putchar(buffer[index]);
+		if (n < 0)
+		{
+			putchar('-');
+			n = -n;
+		}
+		if (n == 0)
+		{
+			putchar('0');
+		} else
+		{
+			while (n != 0)
+			{
+				putchar('0' + n % 10);
+				n /= 10;
+			}
+		}
 	}
 	return (0);
 }
