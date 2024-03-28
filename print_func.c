@@ -49,7 +49,7 @@ int print_string(va_list args)
 /**
 * print_integer - function that prints an integer when i or d specifiers are encountered
 */
-void print_integer(int n)
+void print_int_dec(int n)
 {
 	char buffer[12];
 	int index = 0;

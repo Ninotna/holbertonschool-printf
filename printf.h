@@ -28,7 +28,6 @@ int _strlen(char *s);
 
 /* all calls from specifier */
 int print_string(va_list p);
-int print_int(va_list p);
-int print_decimal(va_list p);
+int print_int_dec(va_list p);
 
 #endif
