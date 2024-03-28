@@ -54,3 +54,5 @@ dkms.conf
 *--.md
 .vscode
 .gitignore
+
+tmp/
