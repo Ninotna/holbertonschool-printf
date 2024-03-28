@@ -7,6 +7,7 @@
 #include <limits.h>
 #include <float.h>
 #include <unistd.h>
+#include <string.h>
 
 /**
  * struct format_specifier - Structure to map format specifiers
@@ -23,6 +24,7 @@ typedef struct format_specifier
 int _printf(const char *format, ...);
 int specifier(int *i, const char *format, va_list list);
 int _putchar(char c);
+int _strlen(char *s);
 
 /* all calls from specifier */
 int print_string(va_list p);
