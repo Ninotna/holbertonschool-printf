@@ -50,8 +50,9 @@ int print_string(va_list args)
 * print_int_dec - function
 * that prints an integer when i or d specifiers are encountered
 * @n: int
+* Return: 0;
 */
-void print_int_dec(int n)
+int print_int_dec(int n)
 {
 	char buffer[12];
 	int index = 0;
@@ -79,4 +80,5 @@ void print_int_dec(int n)
 	{
 		_putchar(buffer[index]);
 	}
+	return (0);
 }
