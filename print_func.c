@@ -1,85 +1,81 @@
 #include "printf.h"
 
 /**
-* print_percent - function that prints a percent symbol
-* @p: pointer
-* Return: percent
+* _putchar - Helper function to write a character to stdout
+* @c: character to write
+*
+* Return: On success 1.
 */
-int print_percent(va_list __attribute__((unused)) p)
+int _putchar(char c)
 {
-	_putchar('%');
-	return (1);
+	return (write(1, &c, 1));
 }
 
 /**
-* print_char - function that prints a char when c specifier is encountered
-* @p: ff
-* Return: character
+* int_to_str - Converts an integer to a string
+* @n: the integer to convert
+* @str: the string to store the converted integer
+* Return: Length of the string
 */
-int print_char(va_list p)
+int int_to_str(int n, char *str)
 {
-
-	int ch = (char)va_arg(p, int);
-
-	_putchar(ch);
-	return (1);
+	return (sprintf(str, "%d", n));
 }
 
 /**
-* print_string - function that prints a string when s specifier is encountered
-*
-* @args: the arguments passed to the funtion
-*
-* Return: return the number of characters in string
+* print_int - Prints an integer
+* @args: list of arguments from which the integer is extracted and printed
+* Return: Number of characters printed
+*/
+int print_int(va_list args)
+{
+	int n = va_arg(args, int);
+
+	char buffer[12];
+
+	int i, count;
+
+	count = int_to_str(n, buffer);
+	for (i = 0; buffer[i]; i++)
+	{
+		_putchar(buffer[i]);
+	}
+	return (count);
+}
+
+/**
+* print_char - Prints a character
+* @args: list of arguments from which the character is extracted and printed
+* Return: Number of characters printed (always 1)
+*/
+int print_char(va_list args)
+{
+	char c = (char)va_arg(args, int);
+
+	_putchar(c);
+	return (1); /* Since it's a single character */
+}
+
+/**
+* print_string - Prints a string
+* @args: list of arguments from which the string is extracted and printed
+* Return: Number of characters printed
 */
 int print_string(va_list args)
 {
-	int string_count, index;
-	char *str = va_arg(args, char *);
+	char *s = va_arg(args, char *);
+	int i;
+	int count = 0;
 
-	if (str == NULL)
-		str = "(null)";
-
-	string_count = _strlen(str);
-
-	for (index = 0; index < string_count; index++)
+	if (s == NULL)
 	{
-		_putchar(str[index]);
+		s = "(null)";
 	}
-	return (string_count);
-}
+	for (i = 0; s[i]; i++)
 
-/**
-* print_int_dec - function
-* that prints an integer when i or d specifiers are encountered
-* @p: int
-* Return: 0;
-*/
-int print_int_dec(va_list p)
-{
-	int i = 0;
-	int n = va_arg(p, int);
-
-	for (; i < n; i++)
 	{
-
-
-		if (n < 0)
-		{
-			putchar('-');
-			n = -n;
-		}
-		if (n == 0)
-		{
-			putchar('0');
-		} else
-		{
-			while (n != 0)
-			{
-				putchar('0' + n % 10);
-				n /= 10;
-			}
-		}
+		_putchar(s[i]);
+		count++;
 	}
-	return (0);
+	return (count);
 }

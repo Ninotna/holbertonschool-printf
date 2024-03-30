@@ -10,30 +10,30 @@
 #include <string.h>
 
 /**
-* struct format_specifier - Structure to map format specifiers
-* to corresponding print functions
-* @specifier: Pointer to a character array representing the format specifier
-* @print_func: Pointer to the corresponding print function
+* struct SpecifierHandler - A structure to map a format specifier to a function
+* @specifier: The format specifier character
+* @print_func: The function to call for the corresponding specifier
+*
+* This struct is used to define a relationship between a format specifier
+* and the function that should be called when that specifier is encountered
+* in a formatted string, allowing for modular and extensible printing logic.
 */
-typedef struct format_specifier
+typedef struct SpecifierHandler
 {
-	char *specifier;
+	char specifier;           /* Format specifier character */
 
-	int (*print_func)(va_list arg);
-} form_spec_t;
+	int (*print_func)(va_list);
+	/* Pointer to function that prints the data and returns the count */
+} SpecifierHandler;
 
-int _printf(const char *format, ...);
-
-int specifier(int *i, const char *format, va_list list);
 
 int _putchar(char c);
 
-int _strlen(char *s);
+int _printf(const char *format, ...);
 
-/* all calls from specifier */
-int print_string(va_list p);
-int print_int_dec(va_list p);
-int print_percent(va_list p);
-int print_char(va_list p);
+int print_int(va_list args);
+int print_char(va_list args);
+int print_string(va_list args);
+int int_to_str(int n, char *str);
 
-#endif
+#endif /* PRINTF_H */
