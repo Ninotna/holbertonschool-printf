@@ -1,63 +1,81 @@
 #include "printf.h"
 
 /**
- * _putchar - Helper function to write a character to stdout
- * @c: character to write
- *
- * Return: On success 1.
- */
+* _putchar - Helper function to write a character to stdout
+* @c: character to write
+*
+* Return: On success 1.
+*/
 int _putchar(char c)
 {
 	return (write(1, &c, 1));
 }
 
 /**
- * print_int - Prints an integer
- * @args: list of arguments from which the integer is extracted and printed
- */
-void print_int(va_list args)
+* int_to_str - Converts an integer to a string
+* @n: the integer to convert
+* @str: the string to store the converted integer
+* Return: Length of the string
+*/
+int int_to_str(int n, char *str)
+{
+	return (sprintf(str, "%d", n));
+}
+
+/**
+* print_int - Prints an integer
+* @args: list of arguments from which the integer is extracted and printed
+* Return: Number of characters printed
+*/
+int print_int(va_list args)
 {
 	int n = va_arg(args, int);
+
 	char buffer[12];
 
-	int_to_str(n, buffer);
-	for (int i = 0; buffer[i]; i++)
+	int i, count;
+
+	count = int_to_str(n, buffer);
+	for (i = 0; buffer[i]; i++)
 	{
-		my_putchar(buffer[i]);
+		_putchar(buffer[i]);
 	}
+	return (count);
 }
 
 /**
- * print_char - Prints a character
- * @args: list of arguments from which the character is extracted and printed
- */
-void print_char(va_list args)
+* print_char - Prints a character
+* @args: list of arguments from which the character is extracted and printed
+* Return: Number of characters printed (always 1)
+*/
+int print_char(va_list args)
 {
-	int c = va_arg(args, int);
+	char c = (char)va_arg(args, int);
 
-	my_putchar(c);
+	_putchar(c);
+	return (1); /* Since it's a single character */
 }
 
 /**
- * print_string - Prints a string
- * @args: list of arguments from which the string is extracted and printed
- */
-void print_string(va_list args)
+* print_string - Prints a string
+* @args: list of arguments from which the string is extracted and printed
+* Return: Number of characters printed
+*/
+int print_string(va_list args)
 {
 	char *s = va_arg(args, char *);
+	int i;
+	int count = 0;
 
-	for (int i = 0; s[i]; i++)
+	if (s == NULL)
 	{
-		my_putchar(s[i]);
+		s = "(null)";
 	}
-}
+	for (i = 0; s[i]; i++)
 
-/**
- * int_to_str - Converts an integer to a string
- * @n: the integer to convert
- * @str: the string to store the converted integer
- */
-void int_to_str(int n, char *str)
-{
-	sprintf(str, "%d", n);
+	{
+		_putchar(s[i]);
+		count++;
+	}
+	return (count);
 }

@@ -1,49 +1,50 @@
 #include "printf.h"
 
 /**
-* _printf - emulate the original printf
-* @format: string to print and format by specifier
-* Description: prints better than the original printf, belive in that
-* Return: lenght of the output
+* _printf - Custom printf function to format and print data
+* @format: The format string containing the characters and format specifiers
+* Return: The number of characters printed
 */
-
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i = 0;
-
-	va_start(args, format);
-
+	int i, j, char_count = 0;
 	SpecifierHandler handlers[] = {
 		{'d', print_int},
+		{'i', print_int},
 		{'c', print_char},
 		{'s', print_string},
 	};
+	int handlers_count = sizeof(handlers) / sizeof(SpecifierHandler);
 
+	va_start(args, format);
 
-
-	while (format[i])
+	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
 		{
 			i++;
-			for (int j = 0; j < sizeof(handlers) / sizeof(SpecifierHandler); j++)
-
+			for (j = 0; j < handlers_count; j++)
 			{
 				if (format[i] == handlers[j].specifier)
 				{
-					handlers[j].print_func(args);
+					char_count += handlers[j].print_func(args);
 					break;
 				}
 			}
-		} else
-		{
-			my_putchar(format[i]);
+			if (j == handlers_count) /* No matching handler found */
+			{
+				_putchar('%');
+				_putchar(format[i]);
+				char_count += 2;
+			}
 		}
-		i++;
+		else
+		{
+			_putchar(format[i]);
+			char_count++;
+		}
 	}
-
 	va_end(args);
-	return (0);
+	return (char_count);
 }
-

@@ -20,9 +20,10 @@
 */
 typedef struct SpecifierHandler
 {
-	char specifier;                 /* Format specifier character */
+	char specifier;           /* Format specifier character */
 
-	void (*print_func)(va_list);    /* Pointer to function that prints the data */
+	int (*print_func)(va_list);
+	/* Pointer to function that prints the data and returns the count */
 } SpecifierHandler;
 
 
@@ -30,7 +31,9 @@ int _putchar(char c);
 
 int _printf(const char *format, ...);
 
-void print_int(va_list args);
-void print_char(va_list args);
-void print_string(va_list args);
+int print_int(va_list args);
+int print_char(va_list args);
+int print_string(va_list args);
+int int_to_str(int n, char *str);
+
 #endif /* PRINTF_H */
