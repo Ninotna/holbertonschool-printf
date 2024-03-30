@@ -25,13 +25,13 @@ int _printf(const char *format, ...)
             if (format[i + 1] == '\0')
             {
                 va_end(args);
-                return(0);  // Indicate an incomplete format specifier
+                return(0);  /* Indicate an incomplete format specifier */
             }
             else if (format[i + 1] == '%')
             {
                 _putchar('%');
                 char_count++;
-                i++;  // Skip the next '%'
+                i++;  /* Skip the next '%' */
             }
             else
             {
@@ -40,14 +40,14 @@ int _printf(const char *format, ...)
                 if (func != NULL)
                 {
                     char_count += func(args);
-                    i++;  // Skip the specifier
+                    i++;  /* Skip the specifier */
                 }
                 else
                 {
                     _putchar('%');
                     _putchar(format[i + 1]);
                     char_count += 2;
-                    i++;  // Skip the invalid specifier
+                    i++;  /* Skip the invalid specifier */
                 }
             }
         }
