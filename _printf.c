@@ -35,7 +35,7 @@ int _printf(const char *format, ...)
             }
             else
             {
-                // Use get_handlers directly to get the function pointer
+                /* Use get_handlers directly to get the function pointer */
                 int (*func)(va_list) = get_handlers(format[i + 1]);
                 if (func != NULL)
                 {
@@ -59,5 +59,5 @@ int _printf(const char *format, ...)
     }
 
     va_end(args);
-    return char_count;
+    return (char_count);
 }
