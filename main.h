@@ -34,5 +34,6 @@ int print_char(va_list args);
 int print_string(va_list args);
 int int_to_str(int n, char *str);
 int print_percent(va_list args);
+int handle_specifiers(va_list args, char spec);
 
 #endif /* MAIN_H */
