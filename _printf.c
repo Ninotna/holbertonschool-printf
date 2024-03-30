@@ -1,4 +1,4 @@
-#include "printf.h"
+#include "main.h"
 
 /**
 * _printf - Custom printf function to format and print data
@@ -15,7 +15,6 @@ int _printf(const char *format, ...)
 		{'c', print_char},
 		{'s', print_string},
 		{'%', print_percent},
-		{NULL, NULL},
 	};
 	int handlers_count = sizeof(handlers) / sizeof(SpecifierHandler);
 

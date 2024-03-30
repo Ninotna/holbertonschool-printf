@@ -1,5 +1,5 @@
-#ifndef PRINTF_H
-#define PRINTF_H
+#ifndef MAIN_H
+#define MAIN_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -35,4 +35,4 @@ int print_string(va_list args);
 int int_to_str(int n, char *str);
 int print_percent(va_list args);
 
-#endif /* PRINTF_H */
+#endif /* MAIN_H */
