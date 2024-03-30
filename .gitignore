@@ -56,3 +56,6 @@ dkms.conf
 .gitignore
 
 tmp/
+
+test/main-full.c
+.gitignore

@@ -79,3 +79,15 @@ int print_string(va_list args)
 	}
 	return (count);
 }
+
+/**
+ * print_percent - Prints the percent symbol
+ * @args: List of arguments, not used in this function
+ * Return: Number of characters printed
+ */
+int print_percent(va_list args)
+{
+    (void)args; // Cast args to void to avoid unused variable warning
+    _putchar('%');
+    return 1;
+}

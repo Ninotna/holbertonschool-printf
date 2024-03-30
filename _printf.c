@@ -14,6 +14,8 @@ int _printf(const char *format, ...)
 		{'i', print_int},
 		{'c', print_char},
 		{'s', print_string},
+		{'%', print_percent},
+		{NULL, NULL},
 	};
 	int handlers_count = sizeof(handlers) / sizeof(SpecifierHandler);
 

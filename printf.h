@@ -33,5 +33,6 @@ int print_int(va_list args);
 int print_char(va_list args);
 int print_string(va_list args);
 int int_to_str(int n, char *str);
+int print_percent(va_list args);
 
 #endif /* PRINTF_H */

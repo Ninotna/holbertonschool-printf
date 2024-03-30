@@ -2,7 +2,8 @@
 #include <stdio.h>
 #include "../printf.h"
 
-/** main - Entry point
+/**
+ * main - Entry point
 * Return: Always 0
 */
 int main(void)
