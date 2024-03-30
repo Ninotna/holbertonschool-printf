@@ -1,6 +1,6 @@
 #include <limits.h>
 #include <stdio.h>
-#include "printf.h"
+#include "../printf.h"
 
 /** main - Entry point
 * Return: Always 0
