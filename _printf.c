@@ -42,8 +42,11 @@ int _printf(const char *format, ...)
 			if (format[index] == '%')
 				char_count += _putchar('%');
 			else
+			{
 				char_count += _putchar('%');
 				char_count += _putchar(format[index]);
+			}
+
 		}
 		index++;
 	}
