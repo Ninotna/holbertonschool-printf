@@ -20,6 +20,7 @@ int (*get_print_func(const char *specifiers))(va_list)
 		{"d", print_int},
 		{"i", print_int},
 		{"b", print_binary},
+		{"p", print_pointer},
 		{NULL, NULL}
 	};
 
