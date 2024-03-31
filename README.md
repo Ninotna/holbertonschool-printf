@@ -130,6 +130,7 @@ Specifier characters at the end define the type and the interpretation of its co
 |------------|-----------------------|-----------------|
 | `c`        | character             | Version 1.0     |
 | `s`        | string                | Version 1.0     |
+| `b`        | binary                | Version 1.0     |
 | `%`        | %                     | Version 1.0     |
 | `d` or `i` | Signed integer        | Version 1.0     |
 | `R`        | Rot translation       | Version 1.2     |
@@ -164,6 +165,11 @@ Output: integer: [87]
 ```bash
 _printf("decimal: [%d]\n", 1987);
 Output: decimal: [1987]
+```
+
+```bash
+_printf("binary: [%b]\n", 98);
+Output: binary: [1100010]
 ```
 
 ```bash
