@@ -13,7 +13,7 @@ int int_to_str(int n, char *str)
 
 /**
 * print_int - Prints an integer
-* @args: list of arguments from which the integer is extracted and printed
+* @args: list of arguments containing the integer to be printed
 * Return: Number of characters printed
 */
 int print_int(va_list args)
