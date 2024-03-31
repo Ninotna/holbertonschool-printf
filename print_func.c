@@ -2,8 +2,8 @@
 
 /**
 * print_char - Prints a character
-* @args: list of arguments from which the character is extracted and printed
-* Return: Number of characters printed (always 1)
+* @args: list of arguments containing the character to be printed
+* Return: Number of characters printed (always 1 for a single char)
 */
 int print_char(va_list args)
 {
@@ -14,9 +14,9 @@ int print_char(va_list args)
 }
 
 /**
-* print_percent - Prints the percent symbol
+* print_percent - Prints the percent symbol '%'
 * @args: List of arguments, not used in this function
-* Return: Number of characters printed
+* Return: Number of characters printed (always 1 for '%')
 */
 int print_percent(va_list args)
 {
