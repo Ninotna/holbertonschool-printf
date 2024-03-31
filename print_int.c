@@ -18,16 +18,16 @@ int int_to_str(int n, char *str)
 */
 int print_int(va_list args)
 {
-	int n = va_arg(args, int);
+	int number = va_arg(args, int);
 
 	char buffer[12];
 
-	int i, count;
+	int index, count;
 
-	count = int_to_str(n, buffer);
-	for (i = 0; buffer[i]; i++)
+	count = int_to_str(number, buffer);
+	for (index = 0; buffer[index]; index++)
 	{
-		_putchar(buffer[i]);
+		_putchar(buffer[index]);
 	}
 	return (count);
 }

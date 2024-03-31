@@ -11,7 +11,7 @@
 */
 int (*get_print_func(const char *specifiers))(va_list)
 {
-	int i = 0;
+	int index = 0;
 
 	form_spec_t valid_types[] = {
 		{"c", print_char},
@@ -23,13 +23,13 @@ int (*get_print_func(const char *specifiers))(va_list)
 		{NULL, NULL}
 	};
 
-	while (valid_types[i].specifier != NULL)
+	while (valid_types[index].specifier != NULL)
 	{
-		if (specifiers[0] == valid_types[i].specifier[0])
+		if (specifiers[0] == valid_types[index].specifier[0])
 		{
-			return (valid_types[i].f);
+			return (valid_types[index].f);
 		}
-		i++;
+		index++;
 	}
 	return (NULL);
 }
