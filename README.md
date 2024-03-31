@@ -198,7 +198,7 @@ man ./man_3_printf
 
 ## 9. Flowchart
 
-<a><img src="https://github.com/Ninotna/holbertonschool-printf/blob/b033f87b13b6cc09971ac0a89150ab92bd3ee4fe/img/diagram_printf.jpg" alt="Flowchart" width="300"></a>
+<a><img src="https://github.com/Ninotna/holbertonschool-printf/blob/b033f87b13b6cc09971ac0a89150ab92bd3ee4fe/img/diagram_printf.jpg" alt="Flowchart" width="500"></a>
 
 ## 10. About authors
 
