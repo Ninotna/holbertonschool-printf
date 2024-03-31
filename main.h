@@ -9,6 +9,14 @@
 #include <unistd.h>
 #include <string.h>
 
+/**
+* struct SpecifierHandler - Structure to map format specifiers
+* to corresponding print functions
+*
+* @specifier: Pointer to a character array representing the format specifier
+*
+* @f: Pointer to the corresponding print function
+*/
 
 typedef struct SpecifierHandler
 {

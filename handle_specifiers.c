@@ -1,9 +1,13 @@
 #include "main.h"
 
 /**
-* get_handlers - Retrieves the handler function for a given specifier
-* @s: The format specifier
-* Return: Pointer to the handling function
+* get_print_func - function pointer that selects the correct function to print
+* a character string according to a format specifier
+*
+* @specifiers: format specifier
+*
+* Return: print function that corresponds to expected specifier characters
+* Or NULL if it doesn't match any of the 5 expected specifier characters.
 */
 int (*get_print_func(const char *specifiers))(va_list)
 {
