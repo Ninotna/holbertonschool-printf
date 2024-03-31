@@ -1,15 +1,12 @@
 #include "main.h"
 
 /**
- * _printf - Custom printf function to format and print data
- * @format: The format string containing the characters and format specifiers
- * Return: The number of characters printed, or -1 for an incomplete specifier
- *
- * Description: Mimics the standard printf function, processing
- * format specifiers and printing the corresponding outputs. It handles
- * a lone '%' character by not printing anything and returning -1.
- */
-
+* _printf - Our custom printf function to format and print data
+*
+* @format: The format string containing the characters and format specifiers
+*
+* Return: The number of characters printed or -1 if the format string is NULL
+*/
 int _printf(const char *format, ...)
 {
 	va_list args;
@@ -30,23 +27,22 @@ int _printf(const char *format, ...)
 			char_count++;
 			continue;
 		}
-		index++;
+		index++;	/* Move to the next character after '%' */
+		/* Get the print function for the next format specifier */
 		func = get_print_func(&format[index]);
-
-		if (func != NULL)
-			char_count += func(args);
+		if (func != NULL)	/* If a valid print function is found */
+			char_count += func(args);	/* Call print function with variable arguments */
 		else
 		{
-			if (format[index] == '\0')
+			if (format[index] == '\0') /* If next character is '\0', return -1 */
 				return (-1);
-			if (format[index] == '%')
-				char_count += _putchar('%');
-			else
+			if (format[index] == '%') /* If next character is '%' */
+				char_count += _putchar('%'); /* print a single '%' */
+			else /* If next char is not '%' */
 			{
-				char_count += _putchar('%');
-				char_count += _putchar(format[index]);
+				char_count += _putchar('%'); /* print '%' */
+				char_count += _putchar(format[index]); /* and then the next character */
 			}
-
 		}
 		index++;
 	}
