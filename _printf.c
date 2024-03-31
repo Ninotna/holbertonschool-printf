@@ -20,8 +20,9 @@ int _printf(const char *format, ...)
 	int handlers_count = sizeof(handlers) / sizeof(SpecifierHandler);
 
 	va_start(args, format);
-
-	for (i = 0; format[i] != '\0'; i++)
+	if (format == NULL)
+		return (-1);
+	while (format[index])
 	{
 		if (format[i] == '%')
 		{
@@ -41,10 +42,27 @@ int _printf(const char *format, ...)
 				char_count += 2;
 			}
 		}
+		index++;
+		func = get_print_func(&format[index]);
+
+		if (func != NULL)
+		{
+			char_count += func(args);
+		}
 		else
 		{
-			_putchar(format[i]);
-			char_count++;
+			if (format[index] == '\0')
+				return (-1);
+
+			if (format[index] == '%')
+			{
+				char_count += _putchar('%');
+			}
+			else
+			{
+				char_count += _putchar('%');
+				char_count += _putchar(format[index]);
+			}
 		}
 	}
 	va_end(args);
