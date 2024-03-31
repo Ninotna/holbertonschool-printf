@@ -28,9 +28,10 @@ int _putchar(char c);
 int _strlen(char *s);
 
 /* all calls from specifier */
-int print_string(va_list p);
-int print_int_dec(va_list p);
-int print_percent(va_list p);
-int print_char(va_list p);
+int print_string(va_list list);
+int print_int_dec(va_list list);
+int print_percent(va_list list);
+int print_char(va_list list);
+int print_unsigned_int(va_list list);
 
 #endif
