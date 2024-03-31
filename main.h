@@ -35,6 +35,7 @@ int print_char(va_list args);
 int print_string(va_list args);
 int print_percent(va_list args);
 int print_int(va_list args);
+int print_binary(va_list args);
 int (*get_print_func(const char *specifiers))(va_list);
 
 #endif /* MAIN_H */

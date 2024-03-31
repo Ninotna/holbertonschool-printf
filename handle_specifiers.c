@@ -19,6 +19,7 @@ int (*get_print_func(const char *specifiers))(va_list)
 		{"%", print_percent},
 		{"d", print_int},
 		{"i", print_int},
+		{"b", print_binary},
 		{NULL, NULL}
 	};
 
