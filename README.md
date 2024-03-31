@@ -128,15 +128,15 @@ Specifier characters at the end define the type and the interpretation of its co
 
 | Specifier  | Output                | Release Version |
 |------------|-----------------------|-----------------|
-| `c`        | character             | Version X.X     |
-| `s`        | string                | Version X.X     |
-| `%`        | %                     | Version X.X     |
-| `d` or `i` | Signed integer        | Version X.X     |
-| `R`        | Rot translation       | Version X.X     |
-| `r`        | string reverse        | Version X.X     |
-| `b`        | Binary conversion     | Version X.X     |
-| `o`        | octal conversion      | Version X.X     |
-| `u`        | unsigned conversion   | Version X.X     |
+| `c`        | character             | Version 1.0     |
+| `s`        | string                | Version 1.0     |
+| `%`        | %                     | Version 1.0     |
+| `d` or `i` | Signed integer        | Version 1.0     |
+| `R`        | Rot translation       | Version 1.2     |
+| `r`        | string reverse        | Version 1.2     |
+| `b`        | Binary conversion     | Version 1.1     |
+| `o`        | octal conversion      | Version 1.3     |
+| `u`        | unsigned conversion   | Version 1.4     |
 
 ## 6.Test
 
