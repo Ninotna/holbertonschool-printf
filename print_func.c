@@ -1,17 +1,6 @@
 #include "main.h"
 
 /**
-* _putchar - Helper function to write a character to stdout
-* @c: character to write
-*
-* Return: On success 1.
-*/
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-
-/**
 * print_char - Prints a character
 * @args: list of arguments from which the character is extracted and printed
 * Return: Number of characters printed (always 1)

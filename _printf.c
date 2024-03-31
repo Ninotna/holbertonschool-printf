@@ -9,55 +9,43 @@
  * format specifiers and printing the corresponding outputs. It handles
  * a lone '%' character by not printing anything and returning -1.
  */
-#include "main.h"
 
 int _printf(const char *format, ...)
 {
-    va_list args;
-    int i, char_count = 0;
+	va_list args;
+	int index = 0, char_count = 0;
+	int (*func)(va_list) = NULL;
 
-    va_start(args, format);
+	va_start(args, format);
 
-    for (i = 0; format[i] != '\0'; i++)
-    {
-        if (format[i] == '%')
-        {
-            if (format[i + 1] == '\0')
-            {
-                va_end(args);
-                return(0);  /* Indicate an incomplete format specifier */
-            }
-            else if (format[i + 1] == '%')
-            {
-                _putchar('%');
-                char_count++;
-                i++;  /* Skip the next '%' */
-            }
-            else
-            {
-                /* Use get_handlers directly to get the function pointer */
-                int (*func)(va_list) = get_handlers(format[i + 1]);
-                if (func != NULL)
-                {
-                    char_count += func(args);
-                    i++;  /* Skip the specifier */
-                }
-                else
-                {
-                    _putchar('%');
-                    _putchar(format[i + 1]);
-                    char_count += 2;
-                    i++;  /* Skip the invalid specifier */
-                }
-            }
-        }
-        else
-        {
-            _putchar(format[i]);
-            char_count++;
-        }
-    }
+	if (format == NULL)
+		return (-1);
 
-    va_end(args);
-    return (char_count);
+	while (format[index])
+	{
+		if (format[index] != '%')
+		{
+			_putchar(format[index]);
+			index++;
+			char_count++;
+			continue;
+		}
+		index++;
+		func = get_print_func(&format[index]);
+
+		if (func != NULL)
+			char_count += func(args);
+		else
+		{
+			if (format[index] == '\0')
+				return (-1);
+			if (format[index] == '%')
+				char_count += _putchar('%');
+			else
+				char_count += _putchar(format[index]);
+		}
+		index++;
+	}
+	va_end(args);
+	return (char_count);
 }
