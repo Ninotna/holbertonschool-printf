@@ -54,7 +54,7 @@ dkms.conf
 *--.md
 .vscode
 .gitignore
-
+.DS_Store
 tmp/
 
 test/main-full.c
